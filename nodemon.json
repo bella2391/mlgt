@@ -1,0 +1,11 @@
+{
+  "restartable": "rs",
+  "watch": [
+    "./src"
+  ],
+  "ignore": [
+    "tests/**/*.ts"
+  ],
+  "ext": "ts",
+  "exec": "npm run start:todoapp:independence"
+}
