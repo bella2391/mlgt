@@ -20,9 +20,7 @@ For example, I think csrf countermeasure is perfect.
 Want to know more about middleware quickly: [src/middlewares](src/middlewares)
 
 ## Env & Database
-see [example.env](example.env).  
-Unfortunately, only MySQL is supported since I have only used MySQL.  
-Please see [create_tables.sql](create_tables.sql) for the query.
+see [example.env](example.env) and [create_tables.sql](create_tables.sql).
 
 ## Inspired
 [”Introduction to Creating Web Applications with Node.js”](https://zenn.dev/wkb/books/node-tutorial).  
