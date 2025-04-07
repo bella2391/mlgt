@@ -29,4 +29,4 @@ see [example.env](example.env) and [create_tables.sql](create_tables.sql).
 This project uses other external assets someone creates - see the [CREDITS.txt](CREDITS.txt)
 
 ## License
-[MIT](LICENSE.txt)
+[MIT](LICENSE)
