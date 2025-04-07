@@ -1,7 +1,9 @@
 {
   "name": "todoapp",
   "version": "0.0.2",
-  "private": true,
+  "description": "",
+  "license": "MIT",
+  "author": "bella2391",
   "scripts": {
     "build:todoapp": "cd todoapp && tsc",
     "start:todoapp:dev": "cross-env NODE_ENV=development PORT=3001 nodemon",
