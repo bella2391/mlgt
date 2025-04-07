@@ -1,8 +1,8 @@
-# todoapp
+# mlgt - multi login todo
 
 ## Feature
 
-Can log in via google, twitter, discord.  
+Can log in via google, x, discord.  
 ![alt text](https://github.com/bella2391/branding/blob/master/explain/learning/js_ts/login_form.png)  
 After login successfully, redirecting.  
 ![alt text](https://github.com/bella2391/branding/blob/master/explain/learning/js_ts/redirect.png)  
@@ -11,7 +11,7 @@ Can write todo list.
 
 ## Run
 ```
-npm run start:todoapp:dev
+npm run start:mlgt:dev
 ```
 
 ## Comment
