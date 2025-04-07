@@ -2,23 +2,23 @@
   "name": "mlgt",
   "version": "0.1.1",
   "description": "",
+  "license": "MIT",
+  "author": "bella2391",
+  "repository": "github:bella2391/mlgt",
+  "keywords": [
+    "todoapp",
+    "login",
+    "multi-login-platform"
+  ],
+  "bugs": {
+    "url": "https://github.com/bella2391/mlgt/issues"
+  },
   "scripts": {
     "build:mlgt": "tsc",
     "start:mlgt:dev": "cross-env NODE_ENV=development PORT=3001 nodemon",
     "start:mlgt:prod": "cross-env NODE_ENV=production PROXY_REVERSE_PASS=/dev nodemon",
     "start:mlgt:prod:js": "npm run build:mlgt && node ./dist/bin/www.js",
     "start:mlgt:independence": "ts-node --files ./src/bin/www.ts"
-  },
-  "keywords": [
-    "todoapp",
-    "login",
-    "multi-login-platform"
-  ],
-  "author": "bella2391",
-  "license": "MIT",
-  "repository": "github:bella2391/mlgt",
-  "bugs": {
-    "url": "https://github.com/bella2391/mlgt/issues"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
