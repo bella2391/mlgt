@@ -26,7 +26,7 @@ see [example.env](example.env) and [create_tables.sql](create_tables.sql).
 [”Introduction to Creating Web Applications with Node.js”](https://zenn.dev/wkb/books/node-tutorial).  
 
 ## Credits
-This project uses other external assets someone creates - see the [CREDITS.txt](CREDITS.txt)
+This project uses other external assets someone creates - see the [CREDITS](CREDITS)
 
 ## License
 [MIT](LICENSE)
