@@ -3,11 +3,11 @@
 ## Feature
 
 Can log in via google, x, discord.  
-![alt text](https://github.com/bella2391/branding/blob/master/explain/learning/js_ts/login_form.png)  
+![alt text](https://raw.githubusercontent.com/bella2391/branding/refs/heads/master/repo/mlgt/login_form.png)  
 After login successfully, redirecting.  
-![alt text](https://github.com/bella2391/branding/blob/master/explain/learning/js_ts/redirect.png)  
+![alt text](https://raw.githubusercontent.com/bella2391/branding/refs/heads/master/repo/mlgt/redirect.png)  
 Can write todo list.  
-![alt text](https://github.com/bella2391/branding/blob/master/explain/learning/js_ts/todo.png)
+![alt text](https://raw.githubusercontent.com/bella2391/branding/refs/heads/master/repo/mlgt/todo.png)
 
 ## Run
 ```
