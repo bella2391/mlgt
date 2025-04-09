@@ -3,11 +3,11 @@
 ## Feature
 
 Can log in via google, x, discord.  
-![alt text](https://raw.githubusercontent.com/bella2391/branding/refs/heads/master/repo/mlgt/login_form.png)  
+![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgt/login_form.png)  
 After login successfully, redirecting.  
-![alt text](https://raw.githubusercontent.com/bella2391/branding/refs/heads/master/repo/mlgt/redirect.png)  
+![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgt/redirect.png)  
 Can write todo list.  
-![alt text](https://raw.githubusercontent.com/bella2391/branding/refs/heads/master/repo/mlgt/todo.png)
+![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgt/todo.png)
 
 ## Run
 ```

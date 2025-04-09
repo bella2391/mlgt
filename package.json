@@ -3,15 +3,15 @@
   "version": "0.1.2",
   "description": "",
   "license": "MIT",
-  "author": "bella2391",
-  "repository": "github:bella2391/mlgt",
+  "author": "verazza",
+  "repository": "github:verazza/mlgt",
   "keywords": [
     "todoapp",
     "login",
     "multi-login-platform"
   ],
   "bugs": {
-    "url": "https://github.com/bella2391/mlgt/issues"
+    "url": "https://github.com/verazza/mlgt/issues"
   },
   "scripts": {
     "build:mlgt": "tsc",
