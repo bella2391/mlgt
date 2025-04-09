@@ -1,17 +1,17 @@
-# mlgt - multi login todo
+# mlgta - multi login todo app
 
 ## Feature
 
 Can log in via google, x, discord.  
-![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgt/login_form.png)  
+![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgta/login_form.png)  
 After login successfully, redirecting.  
-![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgt/redirect.png)  
+![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgta/redirect.png)  
 Can write todo list.  
-![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgt/todo.png)
+![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgta/todo.png)
 
 ## Run
 ```
-npm run start:mlgt:dev
+npm run start:mlgta:dev
 ```
 
 ## Comment
