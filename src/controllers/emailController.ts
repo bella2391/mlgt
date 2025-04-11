@@ -32,13 +32,13 @@ export async function sendOneTimePass(recipient: string, pass: string): Promise<
 export async function sendVertificationEmail(recipient: string, redirectUrl: string): Promise<boolean> {
   data['email_redirect_url'] = redirectUrl;
   const html = await renderTemplate(path.resolve(__dirname, '../views/auth/confirm-email.ejs'), data);
-  return await sendmail(recipient, "FMCアカウントのメールアドレス認証", html);
+  return await sendmail(recipient, "アカウントのメールアドレス認証", html);
 }
 
 async function sendmail(recipient: string, subject: string, html: string): Promise<boolean> {
   try {
     const mailOptions = {
-      from: `"FMC Support" <${process.env.SMTP_USER}>`,
+      from: `"Support" <${process.env.SMTP_USER}>`,
       to: recipient,
       subject: subject,
       html,
