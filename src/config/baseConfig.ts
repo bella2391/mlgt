@@ -17,13 +17,13 @@ const baseConfig: Config = {
       }
     },
     discord: {
-      kishax: {
+      this: {
         url: 'https://discord.gg/default'
       },
     },
     github: {
-      kishax: {
-        url: 'https://github.com/defaultuser/kishax'
+      this: {
+        url: 'https://github.com/defaultuser/this'
       }
     }
   },

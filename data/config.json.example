@@ -15,12 +15,12 @@
       }
     },
     "discord": {
-      "kishax": {
+      "this": {
         "url": "https://discord.gg/your-discord-invite"
       }
     },
     "github": {
-      "kishax": {
+      "this": {
         "url": "https://github.com/your-github-org/your-repo"
       }
     }

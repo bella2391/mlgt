@@ -15,12 +15,12 @@ export interface Config {
       }
     }
     discord: {
-      kishax: {
+      this: {
         url: string;
       }
     }
     github: {
-      kishax: {
+      this: {
         url: string;
       }
     }
