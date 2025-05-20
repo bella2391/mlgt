@@ -1,8 +1,9 @@
 import cors from 'cors';
+import config from '../config';
 
 const mycors = cors({
   origin: (origin, callback) => {
-    const allowedOrigins = ['http://localhost:3001'];
+    const allowedOrigins = [config.server.url, 'http://localhost:3000', 'http://localhost:3001'];
 
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);

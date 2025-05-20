@@ -1,43 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title><%= title %></title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="<%= rootpath %>/stylesheets/style.css"/>
+  <title><%= config.name %> - Sign in</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <%- include('./include/ogp'); %>
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
 </head>
 <body>
   <%- include('./include/header'); %>
 
-  <%- include('./include/message'); %>
+  <a class="font0-75 under" href="<%= config.server.root %>/signup">サインアップはこちら</a>
 
   <div class="container">
+    <%- include('./include/message'); %>
     <div class="wrapper">
       <div>
-        <a href="<%= rootpath %>/auth/discord"><img class="auth-logo" src="<%= rootpath %>/images/svg/logo/discord/icon_clyde_blurple_RGB.svg"></a>
+        <a href="<%= config.server.root %>/auth/discord"><img class="auth-logo" src="/images/logo/discord/icon_clyde_blurple_RGB.svg"></a>
       </div>
       <div>
-        <a href="<%= rootpath %>/auth/google"><img class="auth-logo" src="<%= rootpath %>/images/svg/logo/google/web_neutral_sq_na.svg"></a>
+        <a href="<%= config.server.root %>/auth/google"><img class="auth-logo" src="/images/logo/google/web_neutral_sq_na.svg"></a>
       </div>
       <div>
-        <a href="<%= rootpath %>/auth/x"><img class="auth-logo" src="<%= rootpath %>/images/svg/logo/x/logo.svg"></a>
+        <a href="<%= config.server.root %>/auth/x"><img class="auth-logo" src="/images/logo/x/logo.svg"></a>
       </div>
     </div>
-    <form action="<%= rootpath %>/signin" method="post">
+    <form action="<%= config.server.root %>/signin" method="post">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <label>ユーザー名</label>
       <input required id="focus" type="text" name="username"/>
       <br>
       <label>パスワード</label>
       <input required type="password" name="password"/>
-      <br><br>
-      <input class="btn btn-primary" type="submit" value="Sign in"/>
+      <br>
+      <a class="font0-75 under" href="<%= config.server.root %>/reset">パスワードを忘れた方</a>
+      <br>
+      <input class="btn btn-primary" type="submit" value="サインイン"/>
     </form>
   </div>
 
-  <script src="<%= rootpath %>/javascripts/focus.js"></script>
+  <%- include('./include/footer'); %>
+
+  <script src="/javascripts/focus.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

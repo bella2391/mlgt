@@ -1,34 +1,21 @@
 import { Knex } from 'knex';
-import './config'
+import config from './config';
 
-const knexConfig: { [key: string]: Knex.Config } = {
-  development: {
-    client: "mysql",
-    connection: {
-      database: process.env.MYSQL_DATABASE,
-      user: process.env.MYSQL_USER,
-      password: process.env.MYSQL_PASSWORD,
-    },
-    pool: { min: 2, max: 10 },
-  },
-  staging: {
-    client: "mysql",
-    connection: {
-      database: process.env.MYSQL_DATABASE,
-      user: process.env.MYSQL_USER,
-      password: process.env.MYSQL_PASSWORD,
-    },
-    pool: { min: 2, max: 10 },
-  },
-  production: {
-    client: "mysql",
-    connection: {
-      database: process.env.MYSQL_DATABASE,
-      user: process.env.MYSQL_USER,
-      password: process.env.MYSQL_PASSWORD,
-    },
-    pool: { min: 2, max: 10 },
+export function getConfig(database: string = config.server.modules.mysql.database): Knex.Config {
+  const user = config.server.modules.mysql.user;
+  const password = config.server.modules.mysql.password;
+
+  if (!database || !user || !password) {
+    throw new Error(`Missing database configuration.`);
   }
-};
 
-export default knexConfig;
+  return {
+    client: "mysql",
+    connection: {
+      database,
+      user,
+      password,
+    },
+    pool: { min: 2, max: 10 },
+  };
+}

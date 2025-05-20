@@ -9,9 +9,10 @@
     "moduleDetection": "force",
     "typeRoots": [
       "./node_modules/@types",
-      "src/@types"
+      "src/types"
     ],
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "resolveJsonModule": true
   },
   "include": [
     "src/**/*",

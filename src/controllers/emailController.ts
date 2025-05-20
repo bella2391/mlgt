@@ -1,52 +1,44 @@
-import nodemailer from 'nodemailer';
-import * as path from "path";
-import '../config';
+import nodemailer, { Transporter } from 'nodemailer';
+import SMTPTransport from 'nodemailer/lib/smtp-transport';
+import path from 'path';
+import config from '../config';
 import { renderTemplate } from '../utils/template';
-import basepath from '../utils/basepath';
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: Number(process.env.SMTP_PORT) === 465,
+const transporter: Transporter = nodemailer.createTransport({
+  host: config.server.modules.nodemailer.host,
+  port: config.server.modules.nodemailer.port,
+  secure: config.server.modules.nodemailer.port === 465,
   requireTLS: true,
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: config.server.modules.nodemailer.user,
+    pass: config.server.modules.nodemailer.password,
   },
-});
-
-const data = {
-  hpurl: basepath.hpurl,
-  rooturl: basepath.rooturl,
-  org_logourl: process.env.ORG_LOGO_URL || '',
-  org_year: process.env.ORG_YEAR || '',
-  org_name: process.env.ORG_NAME || '',
-};
+} as SMTPTransport.Options);
 
 export async function sendOneTimePass(recipient: string, pass: string): Promise<boolean> {
-  data['onetime'] = pass;
-  const html = await renderTemplate(path.resolve(__dirname, '../views/auth/onetime.ejs'), data);
+  config['onetime'] = pass;
+  const html = await renderTemplate(path.resolve(__dirname, '../views/auth/onetime.ejs'), { config: config });
   return await sendmail(recipient, "ワンタイムパスワード", html);
 }
 
 export async function sendVertificationEmail(recipient: string, redirectUrl: string): Promise<boolean> {
-  data['email_redirect_url'] = redirectUrl;
-  const html = await renderTemplate(path.resolve(__dirname, '../views/auth/confirm-email.ejs'), data);
+  config['email_redirect_url'] = redirectUrl;
+  config['comment'] = '本人確認URLは以下の通りです。';
+
+  const html = await renderTemplate(path.resolve(__dirname, '../views/auth/confirm.ejs'), { config: config });
   return await sendmail(recipient, "アカウントのメールアドレス認証", html);
 }
 
 async function sendmail(recipient: string, subject: string, html: string): Promise<boolean> {
   try {
     const mailOptions = {
-      from: `"Support" <${process.env.SMTP_USER}>`,
+      from: `"Support" <${config.server.modules.nodemailer.user}>`,
       to: recipient,
       subject: subject,
       html,
     };
 
     const info = await transporter.sendMail(mailOptions);
-
-    console.log(html);
     console.log('sent mail successfully: %s', info.messageId)
 
     return true;

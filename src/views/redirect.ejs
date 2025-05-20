@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= application_name %></title>
+  <title><%= config.name %> - Redirect</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="<%= rootpath %>/stylesheets/style.css"/>
-  <link rel="stylesheet" href="<%= rootpath %>/stylesheets/loading.css"/>
+  <%- include('./include/ogp'); %>
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
+  <link rel="stylesheet" href="/stylesheets/loading.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
   <%- include('./include/header'); %>
 
-  <%- include('./include/message'); %>
-
   <div class="center">
+    <%- include('./include/message'); %>
     <h1>現在リダイレクト中です...</h1>
     <div class="font0-75">
       (しばらく待ってもリダイレクトされない場合は<a class="under" href="<% if (typeof redirect_url !== 'undefined') { %><%= redirect_url %><% } %>">ココ</a>をクリックしてください。)

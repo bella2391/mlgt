@@ -1,7 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { JwtPayload } from 'jsonwebtoken';
-import '../config';
-import basepath from '../utils/basepath';
+import config from '../config';
 import knex from '../config/knex';
 import authenticateJWT, { generateToken, getToken } from '../middlewares/jwt';
 import { sendVertificationEmail } from '../controllers/emailController';
@@ -53,7 +52,7 @@ router.post('/set-email', requireNonLogin, authenticateJWT, async (req: Request,
   const newPayload: JwtPayload = { id: req.payload.id, name: req.payload.name, email };
   const newtoken = await generateToken(req.payload, false, newPayload);
 
-  const redirectUrl: string = `${basepath.rooturl}auth/set-email?token=${oldtoken}&token2=${newtoken}`;
+  const redirectUrl: string = `${config.server.root}/auth/set-email?token=${oldtoken}&token2=${newtoken}`;
 
   const send = await sendVertificationEmail(email, redirectUrl);
   if (send) {

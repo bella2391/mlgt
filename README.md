@@ -11,7 +11,7 @@ Can write todo list.
 
 ## Run
 ```
-npm run start:mlgta:dev
+npm run dev
 ```
 
 ## Comment
@@ -19,8 +19,8 @@ Many things I added after the fact to make it usable in a production environment
 For example, I think csrf countermeasure is perfect.  
 Want to know more about middleware quickly: [src/middlewares](src/middlewares)
 
-## Env & Database
-see [example.env](example.env) and [create_tables.sql](create_tables.sql).
+## Config & Database
+see [data/config.json.example](data/config.json.example) and [create_tables.sql](create_tables.sql).
 
 ## Inspired
 [”Introduction to Creating Web Applications with Node.js”](https://zenn.dev/wkb/books/node-tutorial).  

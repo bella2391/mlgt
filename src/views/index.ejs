@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= application_name %></title>
+  <title><%= config.name %> - ToDo</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="<%= rootpath %>/stylesheets/style.css" />
+  <%- include('./include/ogp'); %>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
   <%- include('./include/header'); %>
 
-  <%- include('./include/message'); %>
-
   <% if (isAuth) { %>
     <div class="container">
+      <%- include('./include/message'); %>
       <div class="row">
         <div class="col-md-6">
-          <form action="<%= rootpath %>/" method="post">
+          <form action="" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <label>タスクの追加</label>
             <input required id="focus" type="text" name="add" placeholder="何をする？"/>
@@ -33,15 +33,15 @@
       </div>
     </div>
   <% } else { %>
-    <h1>Welcome to the <%= application_name %></h1>
     <div class="center">
-      <a class="btn btn-primary" href="<%= rootpath %>/signup" role="button">Sign up now!</a>
-    </div>
+      <h1>Welcome to the <%= config.name %></h1>
+      <a class="btn btn-primary" href="<%= config.server.root %>/signup" role="button">Sign up now!</a>
+    </div><br>
   <% } %>
 
-  <%- include('./include/footer'); %>
+  <script src="/javascripts/focus.js"></script>
 
-  <script src="<%= rootpath %>/javascripts/focus.js"></script>
+  <%- include('./include/footer'); %>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

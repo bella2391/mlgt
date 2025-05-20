@@ -1,10 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import knex from '../config/knex';
-import signupRouter from './signup';
-import signinRouter from './signin';
-import logoutRouter from './logout';
-import authRouter from './auth';
-import basepath from '../utils/basepath';
+import config from '../config';
 
 const router: express.Router = express.Router();
 
@@ -43,7 +39,7 @@ router.post('/', async (req: Request, res: Response, _: NextFunction) => {
     knex("tasks")
       .insert({ user_id: userId, content: todo })
       .then(() => {
-        res.redirect(`${basepath.rootpath}/`);
+        res.redirect(`${config.server.root}/`);
       })
       .catch((err) => {
         console.error(err);
@@ -55,9 +51,4 @@ router.post('/', async (req: Request, res: Response, _: NextFunction) => {
   }
 });
 
-router.use('/signup', signupRouter);
-router.use('/signin', signinRouter);
-router.use('/logout', logoutRouter);
-router.use('/auth', authRouter);
-
-export { router as indexRouter };
+export default router;

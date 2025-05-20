@@ -143,3 +143,38 @@ hr {
   width: 50px;
   height: auto;
 }
+
+.gap-flex-logo {
+  display: flex;
+  gap: 0 5px;
+}
+
+.logo-image {
+  width: 100px;
+  height: 25px;
+}
+
+.git-logo-image {
+  width: 80px;
+  height: 22px;
+}
+
+.trim_header {
+  position: relative;
+  overflow: hidden;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 3px white;
+}
+
+.trim_header img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  height: 100%;
+}

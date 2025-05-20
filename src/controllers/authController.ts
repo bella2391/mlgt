@@ -1,7 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import passport from 'passport';
-import '../config';
-import basepath from '../utils/basepath';
+import config from '../config';
 import { requireNonLogin } from '../middlewares/checker';
 
 export function setupAuthRoutes(router: express.Router, authtypes: string[]) {
@@ -12,7 +11,7 @@ export function setupAuthRoutes(router: express.Router, authtypes: string[]) {
 }
 
 export const commonAuth = (authtype: string) => (req: Request, res: Response, next: NextFunction) => {
-  passport.authenticate(authtype, (err, user, info) => {
+  passport.authenticate(authtype, (err: any, user: any, info: any) => {
     if (err) {
       return next(err);
     }
@@ -38,7 +37,7 @@ export function loginRedirect(req: Request, res: Response, next: NextFunction, u
       throw new Error("Must be included redirect_url: string in data");
     }
   } else {
-    data['redirect_url'] = basepath.successurl;
+    data['redirect_url'] = `${config.server.root}/`;
   }
 
   data['timeout'] = timeout;

@@ -1,10 +1,10 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
 import { requireNonLogin } from '../middlewares/checker';
 import { commonAuth } from '../controllers/authController';
 
 const router: express.Router = express.Router();
 
-router.get('/', (req: Request, res: Response, _: NextFunction) => {
+router.get('/', (_: Request, res: Response) => {
   res.render('signin', { title: 'Sign in' });
 });
 

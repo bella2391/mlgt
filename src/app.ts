@@ -5,10 +5,10 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import flash from 'connect-flash';
 import favicon from 'serve-favicon';
-import { indexRouter } from './routes/index';
+import config from './config';
+import router from './controllers/routeController';
 import session from './middlewares/session';
 import passport from './middlewares/passport';
-import basepath from './utils/basepath';
 import localvals from './middlewares/localvals';
 import preErrorHandler from './middlewares/pre-error-handler';
 import csrfProtection from './middlewares/csurf';
@@ -17,8 +17,13 @@ import errorHandler from './middlewares/error-handler';
 
 const app = express();
 
-console.log(`> current mode is ${process.env.NODE_ENV}`);
-console.log('> current Base URL is ' + basepath.rooturl);
+// if you use proxy e.g cloudflare tunnel or nginx, write below for relying on requests
+// this is needed for working req.session
+// More strictly, you can also specify Cloudflare's IP range.
+app.set('trust proxy', 1);
+
+console.log('> current mode is ' + process.env.NODE_ENV);
+console.log('> current url is ' + config.server.url);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -45,7 +50,7 @@ app.use(localvals);
 
 app.use(preErrorHandler);
 
-app.use('/', indexRouter);
+app.use('/', router);
 
 app.use(mycors);
 
