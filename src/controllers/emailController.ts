@@ -32,7 +32,7 @@ export async function sendVertificationEmail(recipient: string, redirectUrl: str
 async function sendmail(recipient: string, subject: string, html: string): Promise<boolean> {
   try {
     const mailOptions = {
-      from: `"Support" <${config.server.modules.nodemailer.user}>`,
+      from: `"Kishax Support" <${config.server.modules.nodemailer.from}>`,
       to: recipient,
       subject: subject,
       html,

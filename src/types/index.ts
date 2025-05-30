@@ -64,6 +64,7 @@ export interface Config {
         host: string;
         port: string | number;
         user: string;
+        from: string;
         password: string;
       }
     }
