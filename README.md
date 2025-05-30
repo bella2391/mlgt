@@ -3,11 +3,11 @@
 ## Feature
 
 Can log in via google, x, discord.  
-![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgta/login_form.png)  
+![alt text](https://raw.githubusercontent.com/takayamaekawa/branding/refs/heads/master/repo/mlgta/login_form.png)  
 After login successfully, redirecting.  
-![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgta/redirect.png)  
+![alt text](https://raw.githubusercontent.com/takayamaekawa/branding/refs/heads/master/repo/mlgta/redirect.png)  
 Can write todo list.  
-![alt text](https://raw.githubusercontent.com/verazza/branding/refs/heads/master/repo/mlgta/todo.png)
+![alt text](https://raw.githubusercontent.com/takayamaekawa/branding/refs/heads/master/repo/mlgta/todo.png)
 
 ## Run
 ```
